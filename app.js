@@ -17,8 +17,9 @@ app.get('/', (req, res) => {
 })
 
 app.get('/:page', (req, res) => {
+  // const functionalPage = req.params.page
   res.render('show', { text: req.params.page })
-  console.log(`this is ${req.params.page}`)
+  console.log(req)
 })
 
 // start and listen on the express server
