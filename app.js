@@ -13,11 +13,13 @@ app.set('view engine', 'handlebars')
 
 // routes setting
 app.get('/', (req, res) => {
-  res.render('show')
+  res.render('index')
 })
-// app.get('/:page', (req, res) => {
-//   res.send(`you are now at page of ${req.params.page}`)
-// })
+
+app.get('/:page', (req, res) => {
+  res.render('show', { text: req.params.page })
+  console.log(`this is ${req.params.page}`)
+})
 
 // start and listen on the express server
 
